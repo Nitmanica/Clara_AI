@@ -1,0 +1,95 @@
+{
+  "agent_id": "",
+  "channel": "voice",
+  "last_modification_timestamp": 1772610034408,
+  "agent_name": "Conversation Flow Agent",
+  "response_engine": {
+    "type": "conversation-flow",
+    "version": 0,
+    "conversation_flow_id": "conversation_flow_e48a0fff76d0"
+  },
+  "language": "en-US",
+  "data_storage_setting": "everything",
+  "opt_in_signed_url": false,
+  "version": 0,
+  "is_published": false,
+  "post_call_analysis_model": "gpt-4.1-mini",
+  "pii_config": {
+    "mode": "post_call",
+    "categories": []
+  },
+  "voice_id": "retell-Cimo",
+  "max_call_duration_ms": 3600000,
+  "interruption_sensitivity": 0.9,
+  "allow_user_dtmf": true,
+  "user_dtmf_options": {},
+  "conversationFlow": {
+    "conversation_flow_id": "conversation_flow_e48a0fff76d0",
+    "version": 0,
+    "global_prompt": "\nYou are Clara, the AI receptionist for Ben's Electric Solutions.\n\nBUSINESS HOURS FLOW\n1. Greet the caller.\n2. Ask the purpose of the call.\n3. Collect name and phone number.\n4. Determine if the issue is emergency or non-emergency.\n5. If emergency, transfer the call to the owner.\n6. If non-emergency, collect job details and inform the customer someone will follow up.\n7. Ask if they need anything else.\n8. End the call politely.\n\nAFTER HOURS FLOW\n1. Greet the caller.\n2. Ask the reason for the call.\n3. Confirm if it is an emergency.\n4. If emergency collect name, phone number, and address.\n5. Attempt transfer.\n6. If transfer fails apologize and assure follow-up.\n7. If non-emergency collect details and confirm follow-up during business hours.\n",
+    "nodes": [
+      {
+        "instruction": {
+          "type": "prompt",
+          "text": "\nYou are Clara, the AI receptionist for Ben's Electric Solutions.\n\nBUSINESS HOURS FLOW\n1. Greet the caller.\n2. Ask the purpose of the call.\n3. Collect name and phone number.\n4. Determine if the issue is emergency or non-emergency.\n5. If emergency, transfer the call to the owner.\n6. If non-emergency, collect job details and inform the customer someone will follow up.\n7. Ask if they need anything else.\n8. End the call politely.\n\nAFTER HOURS FLOW\n1. Greet the caller.\n2. Ask the reason for the call.\n3. Confirm if it is an emergency.\n4. If emergency collect name, phone number, and address.\n5. Attempt transfer.\n6. If transfer fails apologize and assure follow-up.\n7. If non-emergency collect details and confirm follow-up during business hours.\n"
+        },
+        "name": "Welcome Node",
+        "edges": [
+          {
+            "id": "edge-1",
+            "transition_condition": {
+              "type": "prompt",
+              "prompt": "User needs to return the package"
+            }
+          },
+          {
+            "id": "edge-2",
+            "transition_condition": {
+              "type": "prompt",
+              "prompt": "User needs to check the order status"
+            }
+          }
+        ],
+        "start_speaker": "agent",
+        "id": "start-node-1772610033277",
+        "type": "conversation",
+        "display_position": {
+          "x": 342,
+          "y": 433
+        }
+      },
+      {
+        "name": "End Call",
+        "id": "end-call-node-1772610033277",
+        "type": "end",
+        "display_position": {
+          "x": 742,
+          "y": 433
+        },
+        "instruction": {
+          "type": "prompt",
+          "text": "Politely end the call"
+        }
+      }
+    ],
+    "start_node_id": "start-node-1772610033277",
+    "start_speaker": "agent",
+    "model_choice": {
+      "type": "cascading",
+      "model": "gpt-4.1"
+    },
+    "tool_call_strict_mode": true,
+    "knowledge_base_ids": [],
+    "kb_config": {
+      "top_k": 3,
+      "filter_score": 0.6
+    },
+    "begin_tag_display_position": {
+      "x": 122,
+      "y": 333
+    },
+    "is_published": false,
+    "flex_mode": true,
+    "is_transfer_cf": false
+  }
+}

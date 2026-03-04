@@ -1,0 +1,21 @@
+{
+    "changes": [
+        {
+            "field": "business_hours",
+            "old": null,
+            "new": {
+                "days": [
+                    "Mon",
+                    "Tue",
+                    "Wed",
+                    "Thu",
+                    "Fri"
+                ],
+                "start": "08:00",
+                "end": "17:00",
+                "timezone": "America/Calgary"
+            },
+            "reason": "Updated during onboarding"
+        }
+    ]
+}

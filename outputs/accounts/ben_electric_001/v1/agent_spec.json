@@ -1,0 +1,9 @@
+{
+    "agent_name": "Ben Electric AI Receptionist",
+    "voice_style": "friendly professional",
+    "version": "v1",
+    "key_variables": {
+        "company_name": "Ben's Electric Solutions",
+        "crm_system": "Jobber"
+    }
+}

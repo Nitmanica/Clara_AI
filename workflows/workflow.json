@@ -1,0 +1,36 @@
+{
+  "name": "Clara Agent Automation",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "1",
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "return [{ message: 'Run extract_demo_data.py -> update_agent_version.py' }];"
+      },
+      "id": "2",
+      "name": "Agent Pipeline",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [450, 300]
+    }
+  ],
+  "connections": {
+    "Manual Trigger": {
+      "main": [
+        [
+          {
+            "node": "Agent Pipeline",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}

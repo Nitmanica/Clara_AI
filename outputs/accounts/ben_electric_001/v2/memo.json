@@ -1,0 +1,34 @@
+{
+    "account_id": "ben_electric_001",
+    "company_name": "Ben's Electric Solutions",
+    "services_supported": [
+        "EV charger installation",
+        "panel changes",
+        "electrical troubleshooting",
+        "outlet replacement",
+        "hot tub hookup",
+        "renovation electrical work"
+    ],
+    "crm_system": "Jobber",
+    "emergency_definition": [
+        "electrical sparks",
+        "power failure"
+    ],
+    "questions_or_unknowns": [
+        "business hours not specified",
+        "timezone not specified"
+    ],
+    "notes": "Owner currently answers most calls himself",
+    "business_hours": {
+        "days": [
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Fri"
+        ],
+        "start": "08:00",
+        "end": "17:00",
+        "timezone": "America/Calgary"
+    }
+}
